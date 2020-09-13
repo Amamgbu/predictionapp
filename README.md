@@ -1,41 +1,59 @@
 [![CircleCI](https://circleci.com/gh/Amamgbu/predictionapp.svg?style=svg)](https://circleci.com/gh/Amamgbu/predictionapp)
 ## Project Overview
+Predictionapp is a project centred around operationalizing a machine learning microservice using Kubernetes, an  open-source system for automating deployment, scaling, and management of containerized applications. In this project, a pre-trained model designed to predict Boston housing prices gotten from the [Boston Kaggle dataset](https://www.kaggle.com/c/boston-housing) is used. The pre-trained model is wrapped in a Flask app and predictions are made from API calls made to the app. The Flask app is further containerized using Docker and Kubernetes. Automated tests are made using CircleCI.
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+## :page_with_curl:  _Project Instructions_
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+**1)** Open your terminal and clone the repo using the following:
+__`git clone https://github.com/Amamgbu/predictionapp.git`__
 
-### Project Tasks
+**2)** Navigate into directory:
+__`cd predictionpp`__
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
+**3)** Make sure python is already installed in your PC. If not already installed, download latest version here: [python](https://www.python.org/)
 
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
+**4)** Create a virtual environment and activate by running the following command:
+__`make setup`__
 
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
+**5)** In order to install project dependencies, run the following:
+__`make install`__
 
----
+**6)** Lint files to test for syntax correctness using command:
+__`make lint`__
 
-## Setup the Environment
+**7)** In order to build docker image and start app, run the following command:
+__`./run_docker.sh`__
 
-* Create a virtualenv and activate it
-* Run `make install` to install the necessary dependencies
+**8)** In order to test app by making predictions, run the command:
+__`./make_prediction.sh`__
 
-### Running `app.py`
+Once predictions are made successfully, the following processes are followed:
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+**9)** Edit upload_docker.sh and change dockerpath to contain ID(username) of your docker container. After this is done, run the following:
+__`./upload_docker.sh`__
 
-### Kubernetes Steps
+**10)** The following command is run in order to run the service in a Kubernetes cluster. Ensure Minikube and Kubernetes is installed on your local machine. Follow this tutorial for more info on how to achieve this on Ubuntu: [Kubernetes Tutorial:Ubuntu] (https://phoenixnap.com/kb/install-minikube-on-ubuntu). After install, edit dockerpath on run_kubernetes.sh and replace with your DockerID.
+__`./run_kubernetes.sh`__
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+**11)** You can test the app deployed by making predictions. Make sure portforwarding is successful.
+__`./make_prediction.sh`__
+
+
+&nbsp;
+
+## :information_source: Files:
+
+* app.py: This contains the python code that runs the Flask app.
+* Makefile: This contains code with commands for setup, installation and lint of project. 
+* Dockerfile: This file sets up Docker image.
+* run_docker.sh: Shell script responsible for creating a docker image from the Dockerfile, listing the images and starting a docker container
+* upload_docker.sh: This script uploads a docker image to docker hub of ID provided.
+* run_kubernetes.sh: This script runs the docker image in a kubernetes cluster.
+* make_prediction.sh: This script tests the microservice deployed by sending data to deployed app which in turn makes predictions.
+
+&nbsp;
+
+
+
+
+

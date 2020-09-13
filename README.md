@@ -8,35 +8,35 @@ Predictionapp is a project centred around operationalizing a machine learning mi
 > __`git clone https://github.com/Amamgbu/predictionapp.git`__
 
 **2)** Navigate into directory:
-__`cd predictionapp`__
+> __`cd predictionapp`__
 
 **3)** Make sure python is already installed in your PC. If not already installed, download latest version here: [python](https://www.python.org/)
 
 **4)** Create a virtual environment and activate by running the following command:
-__`make setup`__
+> __`make setup`__
 
 **5)** In order to install project dependencies, run the following:
-__`make install`__
+> __`make install`__
 
 **6)** Lint files to test for syntax correctness using command:
-__`make lint`__
+> __`make lint`__
 
 **7)** In order to build docker image and start app, run the following command:
-__`./run_docker.sh`__
+> __`./run_docker.sh`__
 
 **8)** In order to test app by making predictions, run the command:
-__`./make_prediction.sh`__
+> __`./make_prediction.sh`__
 
 Once predictions are made successfully, the following processes are followed:
 
 **9)** Edit upload_docker.sh and change dockerpath to contain ID(username) of your docker container. After this is done, run the following:
-__`./upload_docker.sh`__
+> __`./upload_docker.sh`__
 
 **10)** The following command is run in order to run the service in a Kubernetes cluster. Ensure Minikube and Kubernetes is installed on your local machine. Follow this tutorial for more info on how to achieve this on Ubuntu: [Kubernetes Tutorial:Ubuntu] (https://phoenixnap.com/kb/install-minikube-on-ubuntu). After install, edit dockerpath on run_kubernetes.sh and replace with your DockerID.
-__`./run_kubernetes.sh`__
+> __`./run_kubernetes.sh`__
 
 **11)** You can test the app deployed by making predictions. Make sure port forwarding is successful.
-__`./make_prediction.sh`__
+> __`./make_prediction.sh`__
 
 
 &nbsp;

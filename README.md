@@ -5,7 +5,7 @@ Predictionapp is a project centred around operationalizing a machine learning mi
 ## :page_with_curl:  _Project Instructions_
 
 **1)** Open your terminal and clone the repo using the following:
-__`git clone https://github.com/Amamgbu/predictionapp.git`__
+> $git clone https://github.com/Amamgbu/predictionapp.git
 
 **2)** Navigate into directory:
 __`cd predictionapp`__

@@ -8,7 +8,7 @@ Predictionapp is a project centred around operationalizing a machine learning mi
 __`git clone https://github.com/Amamgbu/predictionapp.git`__
 
 **2)** Navigate into directory:
-__`cd predictionpp`__
+__`cd predictionapp`__
 
 **3)** Make sure python is already installed in your PC. If not already installed, download latest version here: [python](https://www.python.org/)
 
@@ -35,7 +35,7 @@ __`./upload_docker.sh`__
 **10)** The following command is run in order to run the service in a Kubernetes cluster. Ensure Minikube and Kubernetes is installed on your local machine. Follow this tutorial for more info on how to achieve this on Ubuntu: [Kubernetes Tutorial:Ubuntu] (https://phoenixnap.com/kb/install-minikube-on-ubuntu). After install, edit dockerpath on run_kubernetes.sh and replace with your DockerID.
 __`./run_kubernetes.sh`__
 
-**11)** You can test the app deployed by making predictions. Make sure portforwarding is successful.
+**11)** You can test the app deployed by making predictions. Make sure port forwarding is successful.
 __`./make_prediction.sh`__
 
 
@@ -48,8 +48,8 @@ __`./make_prediction.sh`__
 * Dockerfile: This file sets up Docker image.
 * run_docker.sh: Shell script responsible for creating a docker image from the Dockerfile, listing the images and starting a docker container
 * upload_docker.sh: This script uploads a docker image to docker hub of ID provided.
-* run_kubernetes.sh: This script runs the docker image in a kubernetes cluster.
-* make_prediction.sh: This script tests the microservice deployed by sending data to deployed app which in turn makes predictions.
+* run_kubernetes.sh: Shell script responsible for running image in Kubernetes cluster.
+* make_prediction.sh: Shell script responsible for testing deployed microservice with dummy data in order to make predictions.
 
 &nbsp;
 
